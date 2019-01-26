@@ -1,0 +1,73 @@
+$bottom-line-color: rgba(0, 0, 0, 0.2);
+$easing-func: ease-in-out;
+
+.text-field {
+  width: 100%;
+  position: relative;
+  padding: 1rem 0;
+  border-bottom: 2px solid $bottom-line-color;
+  transition: border-bottom-color 0.25s $easing-func;
+
+  &__input {
+    border: 0;
+    width: 100%;
+    font-size: var(--input-font-size);
+    outline: none;
+    font-weight: var(--input-font-weight);
+    &::placeholder {
+      transition: color 0.25s $easing-func;
+    }
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: 0;
+    font-size: var(--label-font-size);
+    top: var(--label-top);
+    text-transform: capitalize;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 0.1s ease-in, transform 0.2s ease-in;
+  }
+
+  &__len {
+    height: 0;
+    position: absolute;
+    bottom: -2px;
+    background-color: transparent;
+    border-bottom: 2px solid $bottom-line-color;
+    transition: max-width 0.25s $easing-func, width 0.3s $easing-func,
+      border-bottom-color 0.2s $easing-func;
+    overflow: hidden;
+
+    & span {
+      font: -moz-field;
+      font: -webkit-small-control;
+      font-size: var(--input-font-size);
+      font-weight: var(--input-font-weight);
+      max-width: fit-content;
+      -moz-appearance: textfield;
+      -webkit-appearance: textfield;
+      background-color: transparent;
+      border: none;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+  &--hide-bm-border {
+    border-bottom-color: transparent;
+  }
+
+  &__input:focus ~ &__len {
+    border-bottom-color: black;
+  }
+
+  &__input:focus ~ &__label,
+  &__label--show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
