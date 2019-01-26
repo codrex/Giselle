@@ -1,0 +1,30 @@
+$img-sm: 3.125rem;
+$img-md: 6.25rem;
+$img-lg: 9.375rem;
+
+.image-avatar {
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  background-color: rgba(gray, 0.3);
+
+  & img {
+    max-width: 100%;
+  }
+
+  &--sm {
+    height: $img-sm;
+    width: $img-sm;
+  }
+
+  &--md {
+    height: $img-md;
+    width: $img-md;
+  }
+
+  &--lg {
+    height: $img-lg;
+    width: $img-lg;
+  }
+}
