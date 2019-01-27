@@ -12,11 +12,23 @@ class TextField extends PureComponent {
   handleChange = (event) => {
     if (!event) return;
     const { value } = event.target;
-    const valueLen = shouldUpdateValueLen(getTextWidth(value, '#len-indicator>span'));
     const { handleChange } = this.props;
-    this.setState({ valueLen, value });
+    this.updateState(value);
     handleChange(value);
   };
+
+  updateState(value) {
+    const valueLen = shouldUpdateValueLen(getTextWidth(value, '#len-indicator>span'));
+    this.setState({ valueLen, value });
+  }
+
+  // eslint-disable-next-line
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const { value } = nextProps;
+    if (this.state.value !== value) {
+      this.updateState(value);
+    }
+  }
 
   render() {
     const {
@@ -26,7 +38,11 @@ class TextField extends PureComponent {
     const labelClass = value ? 'text-field__label--show' : '';
     const hideBottomBorderClass = value ? 'text-field--hide-bm-border' : '';
     return (
-      <div className={`text-field ${hideBottomBorderClass} ${className}`}>
+      <div
+        className={`text-field ${hideBottomBorderClass} ${className}`}
+        role="presentation"
+        tabIndex="-1"
+      >
         <input
           type={type}
           id={name}

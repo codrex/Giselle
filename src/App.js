@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import user from './assets/img/user.png';
+import Select from './components/Select';
+import { COUNTRIES } from './constants';
+import { buildSelectOptions } from './utils';
 import './App.css';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -8,7 +9,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header url={user} name="giselle" />
+        <Select
+          options={buildSelectOptions(COUNTRIES)}
+          label="country"
+          placeholder="Select your country"
+        />
       </div>
     );
   }

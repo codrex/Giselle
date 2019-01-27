@@ -19,6 +19,7 @@
   --text-color-dark: rgba(0, 0, 0, 0.9);
   --text-color: rgba(0, 0, 0, 0.7);
   --text-color-light: rgba(0, 0, 0, 0.5);
+  --hover-color: rgba(0, 0, 0, 0.03);
 }
 
 body {

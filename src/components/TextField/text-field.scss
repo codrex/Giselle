@@ -53,7 +53,8 @@ $easing-func: ease-in-out;
       -webkit-appearance: textfield;
       background-color: transparent;
       border: none;
-      height: 0;
+      height: 100px;
+      white-space: pre;
       overflow: hidden;
     }
   }
@@ -61,7 +62,8 @@ $easing-func: ease-in-out;
     border-bottom-color: transparent;
   }
 
-  &__input:focus ~ &__len {
+  &__input:focus ~ &__len,
+  &__input:focus-within ~ &__len {
     border-bottom-color: black;
   }
 

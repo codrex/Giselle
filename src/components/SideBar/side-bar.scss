@@ -59,7 +59,7 @@ $easing-func: ease-in-out;
     &--active {
       font-weight: bold;
       color: var(--text-color-dark);
-      background-color: rgba(0, 0, 0, 0.03);
+      background-color: var(--hover-color);
     }
   }
 
