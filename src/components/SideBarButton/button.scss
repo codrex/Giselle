@@ -1,0 +1,26 @@
+.btn {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+
+  & svg #Arrow {
+    fill: var(--text-color);
+  }
+
+  &--open {
+    background-color: #dc412e;
+
+    & svg {
+      transform: rotate(180deg);
+    }
+
+    & svg #Arrow {
+      fill: #fff;
+    }
+  }
+}
