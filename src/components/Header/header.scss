@@ -1,0 +1,20 @@
+.header {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0.8rem;
+  width: 100%;
+
+  &__avatar-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    & p {
+      margin: 0;
+      margin-right: 1rem;
+      text-transform: capitalize;
+      font-size: 0.8rem;
+    }
+  }
+}
