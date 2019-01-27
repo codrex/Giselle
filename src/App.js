@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ImageAvatar from './components/ImageAvatar';
-import image from './assets/img/user.png';
+import SideBar from './components/SideBar';
+import { SIDE_BAR_SECTIONS } from './constants';
 import './App.css';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ImageAvatar url={image} altText="user avatar" size="md" />
+        <SideBar sections={SIDE_BAR_SECTIONS} />
       </div>
     );
   }

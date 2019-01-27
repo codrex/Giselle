@@ -1,4 +1,11 @@
-const rootStyle = getComputedStyle(document.body);
-export const FONT_FAMILY = rootStyle.getPropertyValue('--font-family');
-export const INPUT_FONT_SIZE = rootStyle.getPropertyValue('--input-font-size');
-export const INPUT_FONT_WEIGHT = rootStyle.getPropertyValue('--input-font-weight');
+const accountSection = {
+  title: 'account',
+  links: [{ title: 'career', to: 'account/career' }, { title: 'personal', to: 'account/personal' }],
+};
+
+const manageSection = {
+  title: 'manage',
+  links: [{ title: 'password', to: 'manage/password' }, { title: 'email', to: 'manage/email' }],
+};
+
+export const SIDE_BAR_SECTIONS = [manageSection, accountSection];

@@ -1,8 +1,13 @@
 @font-face {
   font-family: 'Gordita';
-  src: url('./assets/fonts/hinted-GorditaRegular.ttf') format('truetype');
-  /* url('./assets/fonts/hinted-GorditaBold.ttf') format('truetype'), */
-  /* url('./assets/fonts/hinted-GorditaMedium.ttf') format('truetype'); */
+  src: url('./assets/fonts/hinted-GorditaRegular.ttf') format('truetype'),
+    url('./assets/fonts/hinted-GorditaBold.ttf') format('truetype'),
+    url('./assets/fonts/hinted-GorditaMedium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fakt';
+  src: url('./assets/fonts/fakt.ttf') format('truetype');
 }
 
 :root {
@@ -11,6 +16,9 @@
   --label-top: -0.87rem;
   --input-font-size: 4rem;
   --input-font-weight: 100;
+  --text-color-dark: rgba(0, 0, 0, 0.9);
+  --text-color: rgba(0, 0, 0, 0.7);
+  --text-color-light: rgba(0, 0, 0, 0.5);
 }
 
 body {

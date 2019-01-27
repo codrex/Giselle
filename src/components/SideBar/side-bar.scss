@@ -1,0 +1,75 @@
+$border-line-color: rgba(27, 26, 25, 0.05);
+$easing-func: ease-in-out;
+.side-bar {
+  width: 15rem;
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: flex-start;
+  border-right: 1px solid $border-line-color;
+  &__section {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+  }
+
+  &__header {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: left;
+    padding: 1.4rem 0;
+    margin: 0;
+    color: var(--text-color);
+    font-family: 'Fakt';
+  }
+
+  &__logo {
+    font-size: 1.75rem;
+    line-height: 1.3rem;
+    padding: 2rem 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid $border-line-color;
+    height: 12rem;
+    display: flex;
+    align-items: flex-end;
+    text-transform: capitalize;
+    color: var(--text-color-dark);
+  }
+
+  &__link {
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 1.4rem 0;
+    font-size: 1rem;
+    color: var(--text-color-light);
+    transition: color 0.4s $easing-func, background-color 0.3s $easing-func;
+    width: 100%;
+    text-align: left;
+
+    &:focus,
+    &--active {
+      font-weight: bold;
+      color: var(--text-color-dark);
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+  }
+
+  &__wrapper {
+    overflow: auto;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  &--padding-left {
+    padding-left: 1.8rem;
+  }
+}
