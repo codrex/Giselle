@@ -31,3 +31,7 @@ export const COUNTRIES = [
   'Ukraine',
   'United States of America (USA)',
 ];
+
+export const PASSWORD = 'password';
+export const TEXT = 'text';
+export const DOT = '\u25CF';

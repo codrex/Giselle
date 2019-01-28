@@ -7,6 +7,7 @@ $easing-func: ease-in-out;
   padding: 1rem 0;
   border-bottom: 2px solid $bottom-line-color;
   transition: border-bottom-color 0.25s $easing-func;
+  outline: none;
 
   &__input {
     border: 0;
@@ -27,7 +28,6 @@ $easing-func: ease-in-out;
     left: 0;
     font-size: var(--label-font-size);
     top: var(--label-top);
-    text-transform: capitalize;
     transform: translateY(100%);
     opacity: 0;
     transition: opacity 0.1s ease-in, transform 0.2s ease-in;
@@ -53,7 +53,7 @@ $easing-func: ease-in-out;
       -webkit-appearance: textfield;
       background-color: transparent;
       border: none;
-      height: 100px;
+      height: 0;
       white-space: pre;
       overflow: hidden;
     }

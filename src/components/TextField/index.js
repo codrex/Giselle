@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import propTypes from 'prop-types';
-import { getTextWidth, shouldUpdateValueLen } from '../../utils';
+import {
+  getTextWidth, shouldUpdateValueLen, capitalizeFirstLetter, maskText,
+} from '../../utils';
+import { TEXT, PASSWORD } from '../../constants';
 import './text-field.scss';
 
 class TextField extends PureComponent {
@@ -9,16 +12,28 @@ class TextField extends PureComponent {
     valueLen: 0,
   };
 
+  getCSSClasses() {
+    const isPassword = this.isPassword();
+    const { value } = this.state;
+    const labelClass = value ? 'text-field__label--show' : '';
+    const hideBottomBorderClass = value ? 'text-field--hide-bm-border' : '';
+    const passwordClass = isPassword ? 'text-field--pswd' : '';
+
+    return { labelClass, hideBottomBorderClass, passwordClass };
+  }
+
   handleChange = (event) => {
     if (!event) return;
-    const { value } = event.target;
+    let { value } = event.target;
     const { handleChange } = this.props;
+    value = this.handlePasswordChange(this.state.value, value);
     this.updateState(value);
     handleChange(value);
   };
 
   updateState(value) {
-    const valueLen = shouldUpdateValueLen(getTextWidth(value, '#len-indicator>span'));
+    const { type } = this.props;
+    const valueLen = shouldUpdateValueLen(getTextWidth(value, '#len-indicator>span', type));
     this.setState({ valueLen, value });
   }
 
@@ -30,29 +45,55 @@ class TextField extends PureComponent {
     }
   }
 
-  render() {
+  handlePasswordChange(oldValue, newValue) {
+    if (!this.isPassword()) return newValue;
+    if (newValue.length > oldValue.length) {
+      return `${oldValue}${newValue.slice(-1)}`;
+    }
+    return oldValue.slice(0, oldValue.length - 1);
+  }
+
+  isPassword() {
+    const { type } = this.props;
+    if (type === PASSWORD) {
+      return true;
+    }
+    return false;
+  }
+
+  renderInput() {
     const {
-      name, type, label, className, placeholder,
+      name, type, placeholder, inputProps,
     } = this.props;
-    const { value, valueLen } = this.state;
-    const labelClass = value ? 'text-field__label--show' : '';
-    const hideBottomBorderClass = value ? 'text-field--hide-bm-border' : '';
+    const { value } = this.state;
+    const isPassword = this.isPassword();
+    return (
+      <input
+        type={isPassword ? TEXT : type}
+        id={name}
+        className="text-field__input"
+        placeholder={capitalizeFirstLetter(placeholder)}
+        onChange={this.handleChange}
+        value={maskText(value, type)}
+        autoComplete={isPassword ? 'off' : 'on'}
+        {...inputProps}
+      />
+    );
+  }
+
+  render() {
+    const { name, label, className } = this.props;
+    const { valueLen } = this.state;
+    const { labelClass, hideBottomBorderClass, passwordClass } = this.getCSSClasses();
     return (
       <div
-        className={`text-field ${hideBottomBorderClass} ${className}`}
+        className={`text-field ${hideBottomBorderClass} ${className} ${passwordClass}`}
         role="presentation"
         tabIndex="-1"
       >
-        <input
-          type={type}
-          id={name}
-          className="text-field__input"
-          placeholder={placeholder}
-          onChange={this.handleChange}
-          value={value}
-        />
+        {this.renderInput()}
         <label htmlFor={name} className={`text-field__label ${labelClass}`}>
-          {label}
+          {capitalizeFirstLetter(label)}
         </label>
         <div
           className="text-field__len"
@@ -74,6 +115,7 @@ TextField.propTypes = {
   className: propTypes.string,
   placeholder: propTypes.string,
   handleChange: propTypes.func,
+  inputProps: propTypes.objectOf(propTypes.shape),
 };
 
 TextField.defaultProps = {
@@ -84,6 +126,7 @@ TextField.defaultProps = {
   className: '',
   placeholder: 'Enter your text',
   handleChange: () => {},
+  inputProps: {},
 };
 
 export default TextField;

@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__group {
+    margin-bottom: 4rem;
+  }
+
+  &__header {
+    margin-bottom: 4rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    text-transform: lowercase;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
