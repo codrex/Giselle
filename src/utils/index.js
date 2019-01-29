@@ -12,7 +12,7 @@ export function getTextWidth(text, selector, type) {
 
   if (element) {
     element.innerHTML = maskText(text, type);
-    return element.clientWidth;
+    return element.clientWidth || element.offsetWidth;
   }
   return 0;
 }
