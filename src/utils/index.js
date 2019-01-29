@@ -1,17 +1,8 @@
-import { PASSWORD, DOT } from '../constants';
-
-export function maskText(text, type) {
-  if (type === PASSWORD && typeof text === 'string') {
-    return text.replace(/./gi, DOT);
-  }
-  return text;
-}
-
-export function getTextWidth(text, selector, type) {
+export function getTextWidth(text, selector) {
   const element = document && document.querySelector(selector);
 
   if (element) {
-    element.innerHTML = maskText(text, type);
+    element.innerHTML = text;
     return element.clientWidth || element.offsetWidth;
   }
   return 0;

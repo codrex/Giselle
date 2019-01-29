@@ -15,11 +15,18 @@ $easing-func: ease-in-out;
     font-size: var(--input-font-size);
     outline: none;
     font-weight: var(--input-font-weight);
+
     &::placeholder {
       transition: color 0.25s $easing-func;
+      font-weight: var(--input-font-weight);
     }
+
     &:focus::placeholder {
       color: transparent;
+    }
+
+    &--pwd:not(:placeholder-shown) {
+      font-family: 'text-security-disc';
     }
   }
 
@@ -51,6 +58,7 @@ $easing-func: ease-in-out;
       max-width: fit-content;
       -moz-appearance: textfield;
       -webkit-appearance: textfield;
+      font-family: 'text-security-circle';
       background-color: transparent;
       border: none;
       height: 0;
@@ -58,6 +66,7 @@ $easing-func: ease-in-out;
       overflow: hidden;
     }
   }
+
   &--hide-bm-border {
     border-bottom-color: transparent;
   }

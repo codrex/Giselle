@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import propTypes from 'prop-types';
-import {
-  getTextWidth, shouldUpdateValueLen, capitalizeFirstLetter, maskText,
-} from '../../utils';
+import { getTextWidth, shouldUpdateValueLen, capitalizeFirstLetter } from '../../utils';
 import { TEXT, PASSWORD } from '../../constants';
 import './text-field.scss';
 
@@ -17,23 +15,20 @@ class TextField extends PureComponent {
     const { value } = this.state;
     const labelClass = value ? 'text-field__label--show' : '';
     const hideBottomBorderClass = value ? 'text-field--hide-bm-border' : '';
-    const passwordClass = isPassword ? 'text-field--pswd' : '';
-
+    const passwordClass = isPassword ? 'text-field--pwd' : '';
     return { labelClass, hideBottomBorderClass, passwordClass };
   }
 
   handleChange = (event) => {
     if (!event) return;
-    let { value } = event.target;
+    const { value } = event.target;
     const { handleChange } = this.props;
-    value = this.handlePasswordChange(this.state.value, value);
     this.updateState(value);
     handleChange(value);
   };
 
   updateState(value) {
-    const { type } = this.props;
-    const valueLen = shouldUpdateValueLen(getTextWidth(value, '#len-indicator>span', type));
+    const valueLen = shouldUpdateValueLen(getTextWidth(value, '#len-indicator>span'));
     this.setState({ valueLen, value });
   }
 
@@ -45,20 +40,9 @@ class TextField extends PureComponent {
     }
   }
 
-  handlePasswordChange(oldValue, newValue) {
-    if (!this.isPassword()) return newValue;
-    if (newValue.length > oldValue.length) {
-      return `${oldValue}${newValue.slice(-1)}`;
-    }
-    return newValue;
-  }
-
   isPassword() {
     const { type } = this.props;
-    if (type === PASSWORD) {
-      return true;
-    }
-    return false;
+    return type === PASSWORD;
   }
 
   renderInput() {
@@ -67,15 +51,18 @@ class TextField extends PureComponent {
     } = this.props;
     const { value } = this.state;
     const isPassword = this.isPassword();
+    const passwordClass = isPassword ? 'text-field__input--pwd' : '';
+
     return (
       <input
         type={isPassword ? TEXT : type}
         id={name}
-        className="text-field__input"
+        className={`text-field__input ${passwordClass}`}
         placeholder={capitalizeFirstLetter(placeholder)}
         onChange={this.handleChange}
-        value={maskText(value, type)}
+        value={value}
         autoComplete={isPassword ? 'off' : 'on'}
+        spellCheck={isPassword ? 'false' : 'true'}
         {...inputProps}
       />
     );
