@@ -1,4 +1,3 @@
-$border-line-color: rgba(27, 26, 25, 0.05);
 $easing-func: ease-in-out;
 .side-bar {
   width: 15rem;
@@ -8,7 +7,10 @@ $easing-func: ease-in-out;
   flex-direction: column;
   height: 100vh;
   align-items: flex-start;
-  border-right: 1px solid $border-line-color;
+  border-right: 1px solid var(--border-color);
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.3s $easing-func;
   &__section {
     padding: 0;
     display: flex;
@@ -37,7 +39,7 @@ $easing-func: ease-in-out;
     margin: 0;
     width: 100%;
     text-align: left;
-    border-bottom: 1px solid $border-line-color;
+    border-bottom: 1px solid var(--border-color);
     height: 12rem;
     display: flex;
     align-items: flex-end;
@@ -70,6 +72,10 @@ $easing-func: ease-in-out;
   }
 
   &--padding-left {
-    padding-left: 1.8rem;
+    padding-left: var(--side-bar-left-padding);
+  }
+
+  &--open {
+    transform: translateX(0%);
   }
 }

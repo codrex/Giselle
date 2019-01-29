@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Password from './components/Forms/Email';
+import UserAccount from './components/UserAccount';
 
 import './App.css';
 
@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Password />
+        <UserAccount />
       </div>
     );
   }

@@ -34,9 +34,10 @@ class SideBar extends PureComponent {
     : null);
 
   render() {
-    const { sections } = this.props;
+    const { sections, open } = this.props;
+    const openClass = open ? 'side-bar--open' : '';
     return (
-      <div className="side-bar">
+      <div className={`side-bar ${openClass}`}>
         <h1 className="side-bar__logo side-bar--padding-left">giselle</h1>
         <div className="side-bar__wrapper">
           {sections.map(section => (
@@ -60,6 +61,11 @@ SideBar.propTypes = {
       ),
     }),
   ).isRequired,
+  open: propTypes.bool,
+};
+
+SideBar.defaultProps = {
+  open: false,
 };
 
 export default SideBar;

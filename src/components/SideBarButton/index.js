@@ -3,10 +3,10 @@ import propTypes from 'prop-types';
 import './button.scss';
 
 function SideBarButton(props) {
-  const { handleClick, isOpen = true } = props;
+  const { handleClick, isOpen = true, className } = props;
   const openClass = isOpen ? 'btn--open' : '';
   return (
-    <button type="button" className={`btn ${openClass}`} onClick={handleClick}>
+    <button type="button" className={`btn ${openClass} ${className}`} onClick={handleClick}>
       <svg width="30px" height="30px" viewBox="0 0 32 32" version="1.1">
         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="Artboard" transform="translate(-81.000000, -80.000000)" fill="#FFFFFF">
@@ -25,10 +25,12 @@ function SideBarButton(props) {
 SideBarButton.propTypes = {
   handleClick: propTypes.func,
   isOpen: propTypes.bool,
+  className: propTypes.string,
 };
 
 SideBarButton.defaultProps = {
   handleClick: () => {},
   isOpen: false,
+  className: '',
 };
 export default SideBarButton;

@@ -4,12 +4,13 @@ import ImageAvatar from '../ImageAvatar';
 import './header.scss';
 
 function Header(props) {
-  const { name, url } = props;
+  const { name, url, children } = props;
   return (
     <header className="header">
       <div className="header__avatar-wrapper">
         <p>{name}</p>
         <ImageAvatar url={url} altText={name} />
+        {children}
       </div>
     </header>
   );
@@ -18,6 +19,11 @@ function Header(props) {
 Header.propTypes = {
   name: propTypes.string.isRequired,
   url: propTypes.string.isRequired,
+  children: propTypes.node,
+};
+
+Header.defaultProps = {
+  children: null,
 };
 
 export default Header;
