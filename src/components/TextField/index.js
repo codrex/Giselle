@@ -50,7 +50,7 @@ class TextField extends PureComponent {
     if (newValue.length > oldValue.length) {
       return `${oldValue}${newValue.slice(-1)}`;
     }
-    return oldValue.slice(0, oldValue.length - 1);
+    return newValue;
   }
 
   isPassword() {

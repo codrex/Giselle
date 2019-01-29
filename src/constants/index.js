@@ -34,4 +34,4 @@ export const COUNTRIES = [
 
 export const PASSWORD = 'password';
 export const TEXT = 'text';
-export const DOT = '\u25CF';
+export const DOT = '\u2022';
