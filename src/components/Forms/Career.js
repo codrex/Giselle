@@ -5,8 +5,8 @@ import TextField from '../TextField';
 function Career() {
   return (
     <Form name="career information">
-      <TextField name="role" placeholder="your job role" label="job role" />
-      <TextField name="organisation" placeholder="your organisation" label="organisation" />
+      <TextField name="role" placeholder="job role" label="job role" />
+      <TextField name="organisation" placeholder="organisation" label="organisation" />
     </Form>
   );
 }

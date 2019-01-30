@@ -8,7 +8,7 @@ function Email() {
       <TextField
         type="email"
         name="newEmail"
-        placeholder="your new email"
+        placeholder="new email"
         label="new email"
         inputProps={{ required: true }}
       />

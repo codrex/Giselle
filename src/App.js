@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UserAccount from './components/UserAccount';
 
-import './App.css';
+import './App.scss';
 
 /* eslint-disable react/prefer-stateless-function */
 class App extends Component {

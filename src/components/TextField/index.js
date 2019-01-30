@@ -61,7 +61,7 @@ class TextField extends PureComponent {
         placeholder={capitalizeFirstLetter(placeholder)}
         onChange={this.handleChange}
         value={value}
-        autoComplete={isPassword ? 'off' : 'on'}
+        autoComplete="off"
         spellCheck={isPassword ? 'false' : 'true'}
         {...inputProps}
       />

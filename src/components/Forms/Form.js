@@ -21,13 +21,13 @@ class Form extends PureComponent {
   renderChildren() {
     const { data } = this.state;
     const { children } = this.props;
-    return Children.map(children, (child) => {
+    return Children.map(children, (child, index) => {
       if (isValidElement(child)) {
         const element = cloneElement(child);
         const { name, label } = element.props;
         const inputName = name || label;
         return (
-          <div className="form__group">
+          <div className="form__group" style={{ animationDelay: `${index / 2}s` }}>
             <element.type
               {...element.props}
               handleChange={this.handleChange(inputName)}

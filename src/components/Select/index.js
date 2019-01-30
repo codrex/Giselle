@@ -11,6 +11,12 @@ class Select extends PureComponent {
     hideOptions: true,
   };
 
+  timeout = null;
+
+  componentWillMount() {
+    clearTimeout(this.timeout);
+  }
+
   handleItemClick = item => () => {
     const { handleChange, options } = this.props;
     handleChange(item);
@@ -22,7 +28,14 @@ class Select extends PureComponent {
   };
 
   handleFocus = () => {
+    clearTimeout(this.timeout);
+    this.timeout = null;
     this.setState({ hideOptions: false });
+  };
+
+  handleBlur = () => {
+    if (this.timeout) return;
+    this.timeout = setTimeout(() => this.setState({ hideOptions: true }), 100);
   };
 
   filterOptions = (change) => {
@@ -56,7 +69,13 @@ class Select extends PureComponent {
     const { label, hideOptions } = this.state;
     const { label: selectLabel, placeholder } = this.props;
     return (
-      <div className="select" role="presentation" tabIndex="-1" onFocus={this.handleFocus}>
+      <div
+        className="select"
+        role="presentation"
+        tabIndex="-1"
+        onFocus={this.handleFocus}
+        onBlur={this.handleBlur}
+      >
         <TextField
           className="select__text-field"
           value={label}

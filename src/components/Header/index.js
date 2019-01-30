@@ -18,12 +18,13 @@ function Header(props) {
 
 Header.propTypes = {
   name: propTypes.string.isRequired,
-  url: propTypes.string.isRequired,
+  url: propTypes.string,
   children: propTypes.node,
 };
 
 Header.defaultProps = {
   children: null,
+  url: '',
 };
 
 export default Header;

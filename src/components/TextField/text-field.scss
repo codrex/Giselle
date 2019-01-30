@@ -17,7 +17,7 @@ $easing-func: ease-in-out;
     font-weight: var(--input-font-weight);
 
     &::placeholder {
-      transition: color 0.25s $easing-func;
+      transition: color 0.3s $easing-func;
       font-weight: var(--input-font-weight);
     }
 
@@ -27,6 +27,7 @@ $easing-func: ease-in-out;
 
     &--pwd:not(:placeholder-shown) {
       font-family: 'text-security-disc';
+      font-size: 1.55rem;
     }
   }
 
@@ -37,7 +38,7 @@ $easing-func: ease-in-out;
     top: var(--label-top);
     transform: translateY(100%);
     opacity: 0;
-    transition: opacity 0.1s ease-in, transform 0.2s ease-in;
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   }
 
   &__len {
@@ -58,13 +59,16 @@ $easing-func: ease-in-out;
       max-width: fit-content;
       -moz-appearance: textfield;
       -webkit-appearance: textfield;
-      font-family: 'text-security-circle';
       background-color: transparent;
       border: none;
       height: 0;
       white-space: pre;
       overflow: hidden;
     }
+  }
+
+  &--pwd &__len span {
+    font-family: 'text-security-circle';
   }
 
   &--hide-bm-border {

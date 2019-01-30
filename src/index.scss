@@ -12,16 +12,22 @@
 
 :root {
   --font-family: 'Gordita';
-  --label-font-size: 1rem;
+  --label-font-size: 0.87rem;
   --label-top: -0.87rem;
   --input-font-size: 1.5rem;
-  --input-font-weight: 100;
+  --input-font-weight: 300;
   --text-color-dark: rgba(0, 0, 0, 0.9);
   --text-color: rgba(0, 0, 0, 0.7);
   --text-color-light: rgba(0, 0, 0, 0.5);
   --hover-color: rgba(0, 0, 0, 0.03);
   --side-bar-left-padding: 1.8rem;
   --border-color: rgba(27, 26, 25, 0.05);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 html,

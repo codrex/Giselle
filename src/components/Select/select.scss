@@ -38,7 +38,8 @@
 
   &__text-field:focus ~ &__options,
   &__text-field:focus-within ~ &__options,
-  &:focus-within &__options {
+  &:focus-within &__options,
+  &:focus &__options {
     visibility: visible;
   }
 }

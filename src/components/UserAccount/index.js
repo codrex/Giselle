@@ -31,6 +31,7 @@ class UserAccount extends PureComponent {
             handleClick={this.toggleSideBar}
           />
         </Header>
+
         <div className="user-account__header">
           <h1>your account</h1>
           <p>tell us a little more about yourself</p>
