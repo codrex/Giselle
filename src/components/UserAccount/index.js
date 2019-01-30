@@ -38,10 +38,10 @@ class UserAccount extends PureComponent {
         </div>
         <div className="user-account__form">
           <Router>
-            <Password path="manage/password" />
-            <Email path="manage/email" />
-            <Personal path="/account/personal" />
-            <Career path="account/career" />
+            <Password path="giselle/manage/password" />
+            <Email path="giselle/manage/email" />
+            <Personal path="giselle/account/personal" />
+            <Career path="giselle/account/career" />
           </Router>
         </div>
 
