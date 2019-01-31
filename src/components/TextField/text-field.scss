@@ -1,6 +1,10 @@
 $bottom-line-color: rgba(0, 0, 0, 0.2);
 $easing-func: ease-in-out;
 
+@mixin password {
+  font-family: 'text-security-disc';
+  font-size: 1.55rem;
+}
 .text-field {
   width: 100%;
   position: relative;
@@ -26,8 +30,7 @@ $easing-func: ease-in-out;
     }
 
     &--pwd:not(:placeholder-shown) {
-      font-family: 'text-security-disc';
-      font-size: 1.55rem;
+      @include password;
     }
   }
 
@@ -68,7 +71,7 @@ $easing-func: ease-in-out;
   }
 
   &--pwd &__len span {
-    font-family: 'text-security-circle';
+    @include password;
   }
 
   &--hide-bm-border {

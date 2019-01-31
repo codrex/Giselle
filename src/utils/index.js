@@ -1,7 +1,7 @@
 export function getTextWidth(text, selector) {
   const element = document && document.querySelector(selector);
   if (element) {
-    element.innerHTML = text;
+    element.textContent = text;
     return element.clientWidth || element.offsetWidth;
   }
   return 0;
