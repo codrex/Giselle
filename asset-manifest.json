@@ -1,15 +1,15 @@
 {
-  "main.css": "/giselle/static/css/main.3805974a.chunk.css",
-  "main.js": "/giselle/static/js/main.5367e438.chunk.js",
-  "main.js.map": "/giselle/static/js/main.5367e438.chunk.js.map",
+  "main.css": "/giselle/static/css/main.4494e9bf.chunk.css",
+  "main.js": "/giselle/static/js/main.333bd418.chunk.js",
+  "main.js.map": "/giselle/static/js/main.333bd418.chunk.js.map",
   "static/js/1.0000add5.chunk.js": "/giselle/static/js/1.0000add5.chunk.js",
   "static/js/1.0000add5.chunk.js.map": "/giselle/static/js/1.0000add5.chunk.js.map",
   "runtime~main.js": "/giselle/static/js/runtime~main.01f39948.js",
   "runtime~main.js.map": "/giselle/static/js/runtime~main.01f39948.js.map",
   "static/media/downArrow.svg": "/giselle/static/media/downArrow.d12342ed.svg",
   "static/media/index.scss": "/giselle/static/media/hinted-GorditaRegular.ab48928f.ttf",
-  "static/css/main.3805974a.chunk.css.map": "/giselle/static/css/main.3805974a.chunk.css.map",
+  "static/css/main.4494e9bf.chunk.css.map": "/giselle/static/css/main.4494e9bf.chunk.css.map",
   "index.html": "/giselle/index.html",
-  "precache-manifest.cb3c79b7ffac463f84b9e8d12d4c6192.js": "/giselle/precache-manifest.cb3c79b7ffac463f84b9e8d12d4c6192.js",
+  "precache-manifest.ec4e05106834b50861ecbd3fdd1c0f9d.js": "/giselle/precache-manifest.ec4e05106834b50861ecbd3fdd1c0f9d.js",
   "service-worker.js": "/giselle/service-worker.js"
 }
