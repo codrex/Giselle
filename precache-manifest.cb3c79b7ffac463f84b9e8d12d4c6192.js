@@ -24,19 +24,19 @@ self.__precacheManifest = [
     "url": "/giselle/static/js/runtime~main.01f39948.js"
   },
   {
-    "revision": "c388880bd5b09083e537",
-    "url": "/giselle/static/js/main.c388880b.chunk.js"
+    "revision": "5367e438740f6fe1193d",
+    "url": "/giselle/static/js/main.5367e438.chunk.js"
   },
   {
     "revision": "0000add5fb7c923c8d7e",
     "url": "/giselle/static/js/1.0000add5.chunk.js"
   },
   {
-    "revision": "c388880bd5b09083e537",
+    "revision": "5367e438740f6fe1193d",
     "url": "/giselle/static/css/main.3805974a.chunk.css"
   },
   {
-    "revision": "e1a68e86674ba71ed1416c53069f5b23",
+    "revision": "61e9027e06ae8ea166dc8be63d8bfce6",
     "url": "/giselle/index.html"
   }
 ];
